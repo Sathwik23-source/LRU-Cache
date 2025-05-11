@@ -124,27 +124,36 @@ class LRU{
     }
 }
 
-let c=prompt("Enter the capcity: ");
-const lr1=new LRU(c);
+let c=null;
+function initializecache() {
+    let size=parseInt(document.getElementById("cacheSize").value);
+    if (isNaN(size)||size<=0) {
+        alert("Enter a valid cache size!");
+        return;
+    }
+    c=new LRU(size);
+    // document.getElementById("cacheContainer").innerHTML="";
+    alert(`LRU Cache of size ${size} initialized`);
+}
 
 function put()
 {
 
     let key=document.getElementById("key").value.trim();
     let val=document.getElementById("value").value.trim();
-    lr1.put(key,val);
+    c.put(key,val);
 }
 
 function get()
 {
     let key=document.getElementById("key").value.trim();
-    lr1.get(key);
+    c.get(key);
 }
 function updateCacheDisplay()
 {
-    let cachecontainer=document.getElementById("cache-display");
+    let cachecontainer=document.getElementById("cacheContainer");
     cachecontainer.innerHTML="";
-    let arr=lr1.getEntries();
+    let arr=c.getEntries();
     arr.forEach(([key,value],index) => {
         let cacheitem=document.createElement("div");
         cacheitem.classList.add("cache-item");

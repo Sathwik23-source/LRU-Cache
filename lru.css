@@ -1,6 +1,156 @@
-.container{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #b7e9ef;
+    color: #333;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #054a87;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Paragraph and list */
+p, ul {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+li {
+    list-style: none;
+    padding-left: 24px;
+    position: relative;
+}
+
+li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    color: #43a047;
+}
+
+/* Input and control sections */
+.input,
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     align-items: center;
 }
-.button{
-    color: blue;
+
+input[type="text"],
+input[type="number"] {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    border-color: #1e88e5;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 15px;
+    min-width: 90px;
+}
+
+button:hover {
+    background-color: #1565c0;
+}
+
+/* Info and heading-content boxes */
+.info {
+    background: #e3f2fd;
+    border-left: 5px solid #1e88e5;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.heading-content {
+    background: #f1f8e9;
+    border-left: 5px solid #7cb342;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Cache display styling */
+.cache-display {
+    background: #fefefe;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 100px;
+    transition: all 0.3s ease;
+}
+
+#cacheContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.cache-item {
+    background: #e3f2fd;
+    border: 1px solid #90caf9;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.cache-item.highlight {
+    background-color: #bbdefb;
+    border-color: #42a5f5;
+    transform: scale(1.05);
+    font-weight: bold;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .input, .controls {
+        flex-direction: column;
+    }
+
+    input, button {
+        width: 100%;
+    }
 }

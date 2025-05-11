@@ -8,15 +8,36 @@
 </head>
 <body>
         <div class="container">
-            <h1 style="margin-left:140px">LRU Cache</h1>
-            <div>
+            <h1 style="margin-left:140px">LRU Cache</h1>         
+            <div class="heading-content">
                 <h2>What is LRU Cache?</h2>
+                  <p>
+                An LRU (Least Recently Used) Cache is a type of cache algorithm that discards the least recently used items first when the cache reaches its capacity. It’s commonly used to manage memory efficiently.
+            </p>
             </div>
-            <input style="margin-left:20px" type="text" id="key" placeholder="Key">
-            <input type="text" id="value" placeholder="Value">
-            <button class="button" onclick="put()">Put</button>
-            <button class="button" onclick="get()">Get</button>
-            <div id="cache-display"></div>
+            <div class="info">
+                <h2>⚙️ How It Works</h2>
+            <ul>
+                <li>🔹 It keeps track of the usage order of the items.</li>
+                <li>🔹 When you access (get) or insert (put) an item, it's marked as the most recently used.</li>
+                <li>🔹 If the cache exceeds its capacity, it evicts the least recently used item.</li>
+            </ul>
+            </div>
+            <div class="input">
+            <input type="number" id="cacheSize" placeholder="Cache Size" min="1">
+            <button onclick="initializecache()">Initialize Cache</button>
+            </div>
+            <div class="controls">
+                <input style="margin-left:20px" type="text" id="key" placeholder="Key">
+                <input type="text" id="value" placeholder="Value">
+                <button class="button" onclick="put()">Put</button>
+                <button class="button" onclick="get()">Get</button>
+            </div>
+            <div class="cache-display">
+            <h2>📊 Cache Status</h2>
+            <div id="cacheContainer"></div>
+        </div>
+
         </div>
     <script src="lru.js" ></script>
 </body>
